@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        console.log(document)
+    </script>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+            background: red;
+        }
+        .div2{
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            background: red;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+          <div style="background: red">{{age}}</div>
+          <div>{{name}}</div>
+        </div>
+    </div>
+
+    <div class="div1">
+
+    </div>
+    <div class="div2">
+
+    </div>
+</body>
+
+<script type="module">
+    import Que from './js/que.js'
+    console.log(Que)
+    var a =new Que({
+        el: "app",
+        data: {
+            age: '190',
+            name: '大大',
+        },
+        method: {
+            create: function () {
+
+            },
+            beforeCreate: function () {
+               console.log('beforeCreate');
+            },
+            beforemount: function () {
+
+            },
+            mounted: function () {
+
+            }
+        }
+    })
+    console.log(a.$data.age);
+</script>
+</html>
